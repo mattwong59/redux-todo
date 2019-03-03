@@ -1,18 +1,29 @@
-//This is the action creator that adds a new item to the list
+//Actions only describe what happened
+//They don't describe how the app's state changes
 
-export function addToList(payload) {
-    //Return the type of action is required, and optionally return a payload in which the reducer takes and manipulates the data
-    return {
-        type: ADD_TO_LIST,
-        payload
-    };
+//action types
+export const ADD_TODO = 'ADD_TODO'
+export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+
+//other constants
+export const VisibilityFilters = {
+    SHOW_ALL: 'SHOW_ALL',
+    SHOW_COMPLETED: 'SHOW_COMPLETED',
+    SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
-//This action creator returns an action type to remove last item of the list.
-
-export function removeFromList() {
-    return {
-        type: REMOVE_FROM_LIST
-    };
+//action creators
+export function addToDo(text) {
+    return { type: ADD_TODO, text }
 }
+
+export function toggleToDo(index) {
+    return { type: TOGGLE_TODO, index }
+}
+
+export function setVisibilityFilter(filter) {
+    return { type: SET_VISIBILITY_FILTER, filter }
+}
+
 
