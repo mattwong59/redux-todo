@@ -8,6 +8,8 @@ let AddTodo = ({ dispatch }) => {
     return (
         <div>
             <form
+                id="addTodo"
+                className="addTodo"
                 onSubmit={e => {
                     e.preventDefault()
                     if (!input.value.trim()) {
@@ -18,11 +20,14 @@ let AddTodo = ({ dispatch }) => {
                 }}
             >
             <input  
+                autoFocus={true}
+                className="input__addTodo"
                 ref={node => {
                     input = node
                 }}
+                
             />
-            <button type="submit">Add Todo</button>
+            <button className="button is-normal is-outlined is-info" type="submit">Add Todo</button>
             </form>
         </div>
     )
